@@ -22,6 +22,8 @@ mineru-models-download \
   -m all
 
 mineru-models-download -s huggingface -m all
+
+mineru-api --host 127.0.0.1 --port 8000
 ```
 
 ## Download Structure: 
