@@ -1,5 +1,7 @@
 # mineru_playground
 
+# How to put mineru caches? 
+
 ```
 brew install python@3.11 uv
 
@@ -9,8 +11,19 @@ source .venv/bin/activate
 
 uv pip install "mineru[all]==3.4.0"
 
-mineru-models-download -s huggingface -m pipeline
+# mineru-models-download -s huggingface -m pipeline
+
+mkdir -p mineru-data/hf-cache
+export HF_HOME="$PWD/mineru-data/hf-cache"
+export MINERU_TOOLS_CONFIG_JSON="$PWD/mineru-data/mineru.json"
+
+mineru-models-download \
+  -s huggingface \
+  -m all
+
 mineru-models-download -s huggingface -m all
+
+
 ```
 
 # Demo Dockerfile
