@@ -1,6 +1,6 @@
 # mineru_playground
 
-# How to put mineru caches? 
+## How to put mineru caches? 
 
 ```bash
 brew install python@3.11 uv
@@ -24,7 +24,7 @@ mineru-models-download \
 mineru-models-download -s huggingface -m all
 ```
 
-# Download Structure: 
+## Download Structure: 
 
 ```bash
 .
@@ -168,7 +168,7 @@ mineru-models-download -s huggingface -m all
 └── mineru.json
 ```
 
-# mineru.json 
+## mineru.json 
 
 ```json
 {
@@ -212,7 +212,7 @@ mineru-models-download -s huggingface -m all
 }
 ```
 
-# Size Inspect: 
+## Size Inspect: 
 
 ```bash
 [4.6G]  .
@@ -355,7 +355,7 @@ mineru-models-download -s huggingface -m all
 ```
 
 
-# Demo Dockerfile
+## Demo Dockerfile
 
 ```bash
 # 基礎映像：vllm-openai v0.21.0（CUDA 13.0，支援 Volta~Blackwell 架構，Compute Capability 7.0~12.1）
