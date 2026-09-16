@@ -16,14 +16,20 @@ uv pip install "mineru[all]==3.4.0"
 mkdir -p mineru-data/hf-cache
 export HF_HOME="$PWD/mineru-data/hf-cache"
 export MINERU_TOOLS_CONFIG_JSON="$PWD/mineru-data/mineru.json"
+export MINERU_MODEL_SOURCE=local
+export HF_HUB_OFFLINE=1
+export TRANSFORMERS_OFFLINE=1
 
 mineru-models-download \
   -s huggingface \
   -m all
 
 mineru-models-download -s huggingface -m all
-
-mineru-api --host 127.0.0.1 --port 8000
+mineru-api \
+  --host 0.0.0.0 \
+  --port 8000 \
+  --enable-vlm-preload true \
+  --engine vllm
 ```
 
 ## Download Structure: 
