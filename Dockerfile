@@ -1,10 +1,13 @@
 FROM vllm/vllm-openai:v0.28.0
 
-RUN apt-get update && \
-    apt-get install -y libgl1 && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && \
+#     apt-get install -y libgl1 && \
+#     apt-get clean && \
+#     rm -rf /var/lib/apt/lists/*
 
+RUN python3 -c \
+    "import cv2; print('OpenCV:', cv2.__version__); print('Path:', cv2.__file__)"
+    
 RUN python3 -m pip install -U 'mineru[torch]>=4.0,<5' \
         --break-system-packages && \
     python3 -m pip cache purge
